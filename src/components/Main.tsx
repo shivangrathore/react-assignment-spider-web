@@ -179,11 +179,11 @@ export default function Main() {
           <div className="flex flex-col mt-10 max-h-[500px] overflow-hidden">
             <h3 className="text-2xl font-bold">Assign Contractor</h3>
             <div className="flex w-full gap-10 overflow-hidden">
-              <div className="flex flex-col gap-4 p-4 border-2 border-ascent bg-black rounded-lg mt-4 shrink-0 overflow-auto hide-scrollbar">
+              <div className="flex flex-col gap-4 p-4 border-2 border-ascent bg-black rounded-lg mt-4 shrink-0 overflow-auto hide-scrollbar max-lg:w-full">
                 {new Array(5).fill(0).map((_, i) => (
                   <div
                     className={cn(
-                      "border-2 border-ascent p-4 rounded-lg",
+                      "border-2 border-ascent p-4 rounded-lg max-lg:w-full",
                       i == 0 && "bg-ascent",
                     )}
                     key={i}
