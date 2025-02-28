@@ -71,7 +71,7 @@ export function SidebarDropdown({
 
 export function Sidebar() {
   return (
-    <aside className="flex-grow max-w-[300px] w-full border-ascent border-2 rounded-lg bg-black/50 p-4 overflow-auto hide-scrollbar flex flex-col">
+    <aside className="flex-grow max-lg:hidden max-w-[300px] w-full border-ascent border-2 rounded-lg bg-black/50 p-4 overflow-auto hide-scrollbar flex flex-col">
       <SidebarDropdown
         name="Events"
         active

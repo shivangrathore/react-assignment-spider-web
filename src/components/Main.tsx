@@ -14,7 +14,7 @@ export default function Main() {
     <main className="border-2 border-ascent flex-grow w-full overflow-auto hide-scrollbar rounded-lg bg-black/30 flex flex-col">
       {!isViewingEvent ? (
         <>
-          <div className="flex justify-between items-center p-8">
+          <div className="flex justify-between items-center p-8 flex-wrap gap-4">
             <h2 className="text-3xl font-medium">Event Requests</h2>
             <div className="flex items-center gap-2">
               <div className="relative">
@@ -113,7 +113,7 @@ export default function Main() {
               </div>
             </div>
           </div>
-          <div className="flex mt-4">
+          <div className="flex mt-4 flex-wrap">
             {[
               "Event Details",
               "Assign Coordinator/Contractor",
@@ -133,7 +133,7 @@ export default function Main() {
               </div>
             ))}
           </div>
-          <div className="flex gap-4 mt-4">
+          <div className="flex gap-4 mt-4 flex-wrap">
             <div className="flex-grow flex flex-col gap-1">
               <h4 className="text-2xl font-semibold">Assign Coordinator</h4>
               <div className="relative flex-grow">
@@ -205,7 +205,7 @@ export default function Main() {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col gap-4 flex-grow overflow-hidden">
+              <div className="flex flex-col gap-4 flex-grow overflow-hidden max-lg:hidden">
                 <h4 className="text-2xl font-medium">Positions</h4>
                 <div className="grid table-position-grid-cols flex-grow border-2 border-ascent rounded-lg bg-black overflow-auto hide-scrollbar">
                   <div className="contents">
@@ -247,6 +247,51 @@ export default function Main() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 flex-grow overflow-hidden lg:hidden max-h-[500px]">
+            <h4 className="text-2xl font-medium mt-14">Positions</h4>
+            <div className="flex-grow overflow-auto hide-scrollbar">
+              <div className="grid table-position-grid-cols w-[800px] flex-grow border-2 border-ascent rounded-lg bg-black overflow-auto hide-scrollbar">
+                <div className="contents">
+                  {["Position", "Time", "Info", "Quantity", ""].map(
+                    (header, i) => (
+                      <div
+                        className="font-semibold border-b border-ascent flex p-2"
+                        key={i}
+                      >
+                        {header}
+                      </div>
+                    ),
+                  )}
+                </div>
+                {new Array(10).fill(0).map((_, i) => (
+                  <div className="contents" key={i}>
+                    {[
+                      "Camera 1 (Video)",
+                      "9 am - 7 pm",
+                      "LP default",
+                      "20",
+                    ].map((header, i) => (
+                      <div
+                        className="font-semibold flex items-center p-2 border-b border-ascent"
+                        key={i}
+                      >
+                        {header}
+                      </div>
+                    ))}
+                    <div className="p-2 border-b border-ascent">
+                      <div className="relative border border-ascent flex rounded-lg">
+                        <input
+                          placeholder="Select Contractor"
+                          className="p-2 w-full"
+                        />
+                        <ChevronDown className="absolute right-2 top-2" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

@@ -1,7 +1,12 @@
+import { MenuIcon } from "lucide-react";
+
 export function Topbar() {
   return (
     <div className="flex items-center justify-between">
-      <img src="bitcoin.svg" />
+      <div className="flex gap-2 items-center">
+        <img src="bitcoin.svg" />
+        <MenuIcon className="lg:hidden size-10" />
+      </div>
       <div className="flex items-center gap-8">
         <div className="flex items-center space-x-1">
           <button>
