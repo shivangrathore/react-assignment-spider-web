@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+body {}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
+
+
+@theme {
+  --color-ascent: #CA71AF;
+}
+
+
+@utility gr1 {
+  background: linear-gradient(180deg, #F0F 0%, #00EEC5 100%);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+}
+
+@utility gr2 {
+  background: linear-gradient(180deg, #8F00FF 0%, #00C8FF 100%);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+}
+
+
+@utility animte-bg {
+  animation: animateBackground 10s linear infinite;
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility custom-scrollbar {
+  &:-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+    height: 12px;
+    /* Height of the horizontal scrollbar */
+  }
+
+  &:-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Background color of the track */
+    border-radius: 6px;
+    /* Rounded corners for the track */
+  }
+
+  &:-webkit-scrollbar-thumb {
+    background: #888;
+    /* Color of the scrollbar thumb */
+    border-radius: 6px;
+    /* Rounded corners for the thumb */
+    border: 3px solid #f1f1f1;
+    /* Padding around the thumb */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+@utility table-grid-cols {
+  grid-template-columns: 300px 200px 200px 200px 200px 300px 200px 200px 200px;
+}
+
+@utility table-position-grid-cols {
+  grid-template-columns: 1fr 0.6fr 0.6fr 0.6fr 1.4fr;
+}
+
+@keyframes animateBackground {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: -360deg;
+  }
+}
